@@ -33,30 +33,34 @@ while ($contato = $resultado->fetch_assoc()) {
     <a href="novo.php" class="btn btn-primary mb-3">Novo Contato</a>
 
     <table class="table table-striped table-hover">
-        <tr>
-            <td>#</td>
-            <td>Nome</td>
-            <td>Fone</td>
-            <td>Ações</td>
-        </tr>
-        <!-- Percorrer o array de contatos e exibir os dados na tabela -->
-        <?php foreach ($contatos as $contato) : ?>
+        <thead>
             <tr>
-                <td><?= $contato['id'] ?></td>
-                <td><?= $contato['nome'] ?></td>
-                <td><?= $contato['fone'] ?></td>
-                <td>
-                    <a class="btn btn-success btn-sm" href="http://localhost:81/agenda/editar.php?id=<?= $contato['id'] ?>">
-                        editar
-                    </a> 
-                    | 
-                    <a class="btn btn-danger btn-sm" href="http://localhost:81/agenda/remover.php?id=<?= $contato['id'] ?>">
-                        remover
-                    </a> 
-                </td>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Fone</th>
+                <th>Ações</th>
             </tr>
-        <?php endforeach; ?>
-        <!-- Fim do loop -->
+        </thead>
+        <tbody>
+            <!-- Percorrer o array de contatos e exibir os dados na tabela -->
+            <?php foreach ($contatos as $contato) : ?>
+                <tr>
+                    <td><?= $contato['id'] ?></td>
+                    <td><?= $contato['nome'] ?></td>
+                    <td><?= $contato['fone'] ?></td>
+                    <td>
+                        <a class="btn btn-success btn-sm" href="http://localhost:81/agenda/editar.php?id=<?= $contato['id'] ?>">
+                            editar
+                        </a> 
+                        | 
+                        <a class="btn btn-danger btn-sm" href="http://localhost:81/agenda/remover.php?id=<?= $contato['id'] ?>">
+                            remover
+                        </a> 
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+            <!-- Fim do loop -->
+        </tbody>
     </table>
 </body>
 </html>
