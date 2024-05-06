@@ -28,6 +28,8 @@ while ($contato = $resultado->fetch_assoc()) {
 <body>
     <h1>Agenda de Contatos</h1>
 
+    <a href="novo.php">Novo Contato</a>
+
     <table border="1">
         <tr>
             <td>#</td>
@@ -35,14 +37,24 @@ while ($contato = $resultado->fetch_assoc()) {
             <td>Fone</td>
             <td>Ações</td>
         </tr>
+        <!-- Percorrer o array de contatos e exibir os dados na tabela -->
         <?php foreach ($contatos as $contato) : ?>
             <tr>
                 <td><?= $contato['id'] ?></td>
                 <td><?= $contato['nome'] ?></td>
                 <td><?= $contato['fone'] ?></td>
-                <td>editar | remover</td>
+                <td>
+                    <a href="http://localhost:81/agenda/editar.php?id=<?= $contato['id'] ?>">
+                        editar
+                    </a> 
+                    | 
+                    <a href="http://localhost:81/agenda/remover.php?id=<?= $contato['id'] ?>">
+                        remover
+                    </a> 
+                </td>
             </tr>
         <?php endforeach; ?>
+        <!-- Fim do loop -->
     </table>
 </body>
 </html>

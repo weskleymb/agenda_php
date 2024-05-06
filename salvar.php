@@ -8,7 +8,15 @@ $fone = $_POST['fone'];
 $conexao = new mysqli('localhost', 'root', 'root', 'agenda_db');
 
 // Inserir os dados na tabela contatos
-$sql = "INSERT INTO contatos (nome, fone) VALUES ('$nome', '$fone')";
+if (isset($_POST['id']))
+{
+    $id = $_POST['id'];
+    $sql = "UPDATE contatos SET nome = '$nome', fone = '$fone' WHERE id = $id";
+}
+else 
+{
+    $sql = "INSERT INTO contatos (nome, fone) VALUES ('$nome', '$fone')";
+}
 
 // Executar a consulta
 $conexao->query($sql);
