@@ -16,6 +16,7 @@ $resultado = mysqli_query($conexao, $sql);
 $contato = mysqli_fetch_assoc($resultado);
 
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

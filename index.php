@@ -16,6 +16,7 @@ $contatos = [];
 while ($contato = $resultado->fetch_assoc()) {
     $contatos[] = $contato;
 }
+
 ?>
 
 <!DOCTYPE html>
