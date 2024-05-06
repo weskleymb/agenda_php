@@ -24,13 +24,15 @@ while ($contato = $resultado->fetch_assoc()) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
-    <h1>Agenda de Contatos</h1>
+<body class="container">
+    
+    <h1 class="my-5">Agenda de Contatos</h1>
 
-    <a href="novo.php">Novo Contato</a>
+    <a href="novo.php" class="btn btn-primary mb-3">Novo Contato</a>
 
-    <table border="1">
+    <table class="table table-striped table-hover">
         <tr>
             <td>#</td>
             <td>Nome</td>
@@ -44,11 +46,11 @@ while ($contato = $resultado->fetch_assoc()) {
                 <td><?= $contato['nome'] ?></td>
                 <td><?= $contato['fone'] ?></td>
                 <td>
-                    <a href="http://localhost:81/agenda/editar.php?id=<?= $contato['id'] ?>">
+                    <a class="btn btn-success btn-sm" href="http://localhost:81/agenda/editar.php?id=<?= $contato['id'] ?>">
                         editar
                     </a> 
                     | 
-                    <a href="http://localhost:81/agenda/remover.php?id=<?= $contato['id'] ?>">
+                    <a class="btn btn-danger btn-sm" href="http://localhost:81/agenda/remover.php?id=<?= $contato['id'] ?>">
                         remover
                     </a> 
                 </td>
